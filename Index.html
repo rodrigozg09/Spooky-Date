@@ -1,0 +1,1354 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una Invitación Misteriosa 🎃</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(100, 20, 40, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(180, 70, 20, 0.12),
+            transparent 30%
+        ),
+        #080709;
+
+    color: #eee;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LUNA
+========================================= */
+
+.moon {
+
+    position: fixed;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: #f4e9cf;
+
+    top: 5%;
+    right: 8%;
+
+    box-shadow:
+        0 0 40px rgba(255,240,190,.35),
+        0 0 100px rgba(255,230,160,.15);
+
+    opacity: .9;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   NIEBLA
+========================================= */
+
+.fog {
+
+    position: fixed;
+
+    width: 700px;
+    height: 250px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.07),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    bottom: 0;
+    left: -200px;
+
+    animation: fogMove 18s linear infinite;
+
+    pointer-events: none;
+}
+
+@keyframes fogMove {
+
+    0% {
+        transform: translateX(-100px);
+    }
+
+    50% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+
+/* =========================================
+   MURCIÉLAGOS
+========================================= */
+
+.bat {
+
+    position: fixed;
+
+    font-size: 25px;
+
+    opacity: .6;
+
+    pointer-events: none;
+
+    animation:
+        flyAcross linear forwards;
+}
+
+@keyframes flyAcross {
+
+    from {
+        transform:
+            translateX(-100px)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateX(50vw)
+            translateY(-80px);
+    }
+
+    to {
+        transform:
+            translateX(110vw)
+            translateY(20px);
+    }
+}
+
+
+/* =========================================
+   TARJETA
+========================================= */
+
+.card {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(92%, 540px);
+
+    min-height: 610px;
+
+    padding: 45px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,20,24,.97),
+            rgba(10,9,12,.97)
+        );
+
+    border:
+
+        1px solid
+        rgba(183,74,43,.4);
+
+    border-radius: 18px;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(180,50,30,.12),
+
+        0 30px 100px
+        rgba(0,0,0,.8);
+
+    display:
+
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform .5s ease;
+}
+
+
+/* borde decorativo */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px solid
+        rgba(200,80,40,.15);
+
+    border-radius: 12px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TELARAÑA
+========================================= */
+
+.web {
+
+    position: absolute;
+
+    font-size: 90px;
+
+    opacity: .08;
+
+    color: white;
+
+    pointer-events: none;
+}
+
+.web.top-left {
+    top: -15px;
+    left: -15px;
+}
+
+.web.bottom-right {
+    bottom: -15px;
+    right: -15px;
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   TITULO
+========================================= */
+
+.eyebrow {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    letter-spacing:
+        4px;
+
+    font-size:
+        12px;
+
+    color:
+        #b96b48;
+
+    margin-bottom:
+        18px;
+
+    text-transform:
+        uppercase;
+}
+
+
+.emoji {
+
+    font-size:
+        58px;
+
+    margin-bottom:
+        20px;
+
+    animation:
+        candleFlicker 2s infinite;
+}
+
+
+@keyframes candleFlicker {
+
+    0%,100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .75;
+        transform: scale(.97);
+    }
+}
+
+
+h1 {
+
+    font-size:
+        clamp(30px, 7vw, 44px);
+
+    line-height:
+        1.1;
+
+    margin-bottom:
+        18px;
+
+    color:
+        #eee6d4;
+
+    text-shadow:
+        0 0 20px
+        rgba(200,70,40,.15);
+}
+
+
+.subtitle {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.7;
+
+    max-width:
+        390px;
+
+    color:
+        #aaa1a0;
+
+    margin-bottom:
+        25px;
+}
+
+
+/* =========================================
+   FECHA
+========================================= */
+
+.date {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    letter-spacing:
+        5px;
+
+    color:
+        #c66a45;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        28px;
+}
+
+
+/* =========================================
+   PREGUNTA
+========================================= */
+
+.question {
+
+    font-size:
+        clamp(24px, 6vw, 34px);
+
+    font-weight:
+        bold;
+
+    color:
+        #f0e7d8;
+
+    margin-bottom:
+        35px;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.buttons {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        180px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        25px;
+}
+
+
+button {
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-weight:
+        bold;
+
+    touch-action:
+        manipulation;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+
+/* YES */
+
+#yesButton {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d1f2d,
+            #c43b32
+        );
+
+    color:
+        white;
+
+    border-radius:
+        999px;
+
+    padding:
+        16px 34px;
+
+    font-size:
+        18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(160,35,40,.35);
+
+    position:
+        relative;
+
+    z-index:
+        10;
+}
+
+
+#yesButton:hover {
+
+    box-shadow:
+        0 0 35px
+        rgba(210,50,40,.5);
+}
+
+
+/* NO */
+
+#noButton {
+
+    background:
+        #242225;
+
+    color:
+        #aaa;
+
+    border:
+        1px solid
+        #3d383c;
+
+    border-radius:
+        999px;
+
+    padding:
+        14px 27px;
+
+    font-size:
+        15px;
+
+    position:
+        relative;
+
+    z-index:
+        5;
+}
+
+
+#noButton:hover {
+
+    background:
+        #302c30;
+}
+
+
+/* =========================================
+   MENSAJE DE REACCIÓN
+========================================= */
+
+#reaction {
+
+    min-height:
+        30px;
+
+    margin-top:
+        10px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        14px;
+
+    color:
+        #b96b48;
+
+    font-weight:
+        bold;
+
+    transition:
+        opacity .3s;
+}
+
+
+/* =========================================
+   PANTALLA FINAL
+========================================= */
+
+#successScreen {
+
+    display:
+        none;
+}
+
+
+.bigPumpkin {
+
+    font-size:
+        100px;
+
+    margin-bottom:
+        20px;
+
+    animation:
+        pumpkinPulse 1.5s infinite;
+}
+
+
+@keyframes pumpkinPulse {
+
+    0%,100% {
+        transform:
+            scale(1)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            scale(1.08)
+            rotate(2deg);
+    }
+}
+
+
+#successScreen h1 {
+
+    color:
+        #d9794d;
+
+    text-shadow:
+        0 0 20px
+        rgba(200,70,30,.35);
+}
+
+
+.success-text {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.8;
+
+    color:
+        #b7afb0;
+
+    max-width:
+        390px;
+
+    margin-top:
+        10px;
+}
+
+
+/* =========================================
+   PISTA
+========================================= */
+
+.clue {
+
+    margin-top:
+        25px;
+
+    padding:
+        15px 20px;
+
+    border:
+        1px dashed
+        rgba(190,100,60,.4);
+
+    border-radius:
+        10px;
+
+    color:
+        #c68a70;
+
+    font-family:
+        monospace;
+
+    font-size:
+        13px;
+
+    display:
+        none;
+}
+
+
+/* =========================================
+   CONFETI / CORAZONES
+========================================= */
+
+.confetti {
+
+    position:
+        fixed;
+
+    top:
+        -30px;
+
+    z-index:
+        100;
+
+    pointer-events:
+        none;
+
+    animation:
+        fall linear forwards;
+}
+
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:
+            0;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:500px) {
+
+    .moon {
+
+        width:
+            120px;
+
+        height:
+            120px;
+
+        right:
+            -20px;
+
+        top:
+            30px;
+    }
+
+    .card {
+
+        min-height:
+            570px;
+
+        padding:
+            35px 20px;
+    }
+
+    .buttons {
+
+        height:
+            200px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Luna -->
+
+<div class="moon"></div>
+
+
+<!-- Niebla -->
+
+<div class="fog"></div>
+
+
+<!-- Murciélagos -->
+
+<div id="bats"></div>
+
+
+<!-- =========================================
+     PANTALLA PRINCIPAL
+========================================= -->
+
+<main
+    class="card"
+    id="questionScreen"
+>
+
+
+    <div class="web top-left">
+        🕸️
+    </div>
+
+    <div class="web bottom-right">
+        🕸️
+    </div>
+
+
+    <div class="eyebrow">
+        Una invitación especial
+    </div>
+
+
+    <div class="emoji">
+        🎃
+    </div>
+
+
+    <h1>
+        Tengo algo que preguntarte...
+    </h1>
+
+
+    <p class="subtitle">
+
+        Hay noches que simplemente se sienten
+        diferentes.
+
+        <br>
+
+        Y creo que esta podría ser
+        una de ellas...
+
+    </p>
+
+
+    <div class="date">
+        02 · OCTUBRE · 2026
+    </div>
+
+
+    <div class="question">
+
+        ¿Quieres pasar una cita tenebrosa a mi lado?
+
+    </div>
+
+
+    <div class="buttons">
+
+
+        <button id="yesButton">
+
+            SÍ ❤️
+
+        </button>
+
+
+        <button id="noButton">
+
+            NO
+
+        </button>
+
+
+    </div>
+
+
+    <div id="reaction"></div>
+
+
+</main>
+
+
+
+<!-- =========================================
+     PANTALLA FINAL
+========================================= -->
+
+<main
+    class="card"
+    id="successScreen"
+>
+
+
+    <div class="web top-left">
+        🕸️
+    </div>
+
+
+    <div class="web bottom-right">
+        🕸️
+    </div>
+
+
+    <div class="bigPumpkin">
+        🎃
+    </div>
+
+
+    <h1>
+        Sabía que dirías que sí ❤️
+    </h1>
+
+
+    <p class="success-text">
+
+        Entonces queda oficialmente confirmado...
+
+        <br><br>
+
+        <strong>
+            Nuestra Spooky Date
+        </strong>
+
+        <br>
+
+        <span style="color:#c66a45;">
+            02 de octubre de 2026
+        </span>
+
+        <br><br>
+
+        Ahora solo falta descubrir
+        qué nos espera esa noche... 👀
+
+    </p>
+
+
+    <!--
+        AQUÍ PODEMOS PONER DESPUÉS
+        LA PISTA DEL SIGUIENTE COFRE
+    -->
+
+    <div
+        class="clue"
+        id="clue"
+    >
+
+        🔐 PISTA DESBLOQUEADA
+
+        <br><br>
+
+        [ AQUÍ IRÁ LA SIGUIENTE PISTA ]
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================================
+   ELEMENTOS
+========================================= */
+
+const yesButton =
+    document.getElementById("yesButton");
+
+const noButton =
+    document.getElementById("noButton");
+
+const reaction =
+    document.getElementById("reaction");
+
+const questionScreen =
+    document.getElementById("questionScreen");
+
+const successScreen =
+    document.getElementById("successScreen");
+
+
+
+/* =========================================
+   CONTADOR
+========================================= */
+
+let noCount = 0;
+
+
+
+/* =========================================
+   RESPUESTAS
+========================================= */
+
+const messages = [
+
+    "¿Segura? 👀",
+
+    "Piénsalo otra vez... 🎃",
+
+    "Creo que te equivocaste...",
+
+    "Ese botón se ve bastante sospechoso... 🕸️",
+
+    "¿Por qué sigues presionándolo? 😭",
+
+    "El botón SÍ parece tener otros planes... ❤️",
+
+    "Creo que ya sabes cuál es la respuesta.",
+
+    "Última oportunidad... 👀",
+
+    "El NO está empezando a perder poder...",
+
+    "Ya no puedes escapar de esta pregunta. 😈"
+
+];
+
+
+
+/* =========================================
+   NO
+========================================= */
+
+noButton.addEventListener(
+    "click",
+    function() {
+
+        noCount++;
+
+
+        /* YES crece */
+
+        const scale =
+            1 + (noCount * 0.30);
+
+        yesButton.style.transform =
+            `scale(${scale})`;
+
+
+        /* Cambiar texto */
+
+        if(noCount >= 3) {
+
+            yesButton.innerHTML =
+                "SÍ ❤️❤️";
+
+        }
+
+        if(noCount >= 5) {
+
+            yesButton.innerHTML =
+                "¡SÍ! 💖";
+
+        }
+
+        if(noCount >= 8) {
+
+            yesButton.innerHTML =
+                "¡SÍÍÍ! ❤️🎃";
+
+        }
+
+
+        /* NO se hace pequeño */
+
+        const noScale =
+            Math.max(
+                .45,
+                1 - (noCount * .08)
+            );
+
+        noButton.style.transform =
+            `scale(${noScale})`;
+
+
+        /* Mensaje */
+
+        const index =
+            Math.min(
+                noCount - 1,
+                messages.length - 1
+            );
+
+        reaction.textContent =
+            messages[index];
+
+
+        /* A partir del sexto NO,
+           el botón escapa */
+
+        if(noCount >= 6) {
+
+            noButton.style.position =
+                "fixed";
+
+            moveNoButton();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================
+   BOTÓN NO ESCAPANDO
+========================================= */
+
+function moveNoButton() {
+
+    const margin = 20;
+
+
+    const maxX =
+        window.innerWidth -
+        noButton.offsetWidth -
+        margin;
+
+
+    const maxY =
+        window.innerHeight -
+        noButton.offsetHeight -
+        margin;
+
+
+    const x =
+        margin +
+        Math.random() *
+        Math.max(1, maxX - margin);
+
+
+    const y =
+        margin +
+        Math.random() *
+        Math.max(1, maxY - margin);
+
+
+    noButton.style.left =
+        `${x}px`;
+
+    noButton.style.top =
+        `${y}px`;
+
+}
+
+
+
+/* =========================================
+   NO EN PC
+========================================= */
+
+noButton.addEventListener(
+    "mouseenter",
+    function() {
+
+        if(noCount >= 6) {
+
+            moveNoButton();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================
+   NO EN CELULAR
+========================================= */
+
+noButton.addEventListener(
+    "touchstart",
+    function() {
+
+        if(noCount >= 6) {
+
+            moveNoButton();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================
+   SÍ
+========================================= */
+
+yesButton.addEventListener(
+    "click",
+    function() {
+
+
+        questionScreen.style.display =
+            "none";
+
+
+        successScreen.style.display =
+            "flex";
+
+
+        /* Celebración */
+
+        createCelebration();
+
+
+        /* Revelar pista */
+
+        setTimeout(
+            function() {
+
+                document.getElementById(
+                    "clue"
+                ).style.display = "block";
+
+            },
+            1800
+        );
+
+    }
+);
+
+
+
+/* =========================================
+   MURCIÉLAGOS
+========================================= */
+
+function createBat() {
+
+    const bat =
+        document.createElement("div");
+
+
+    bat.classList.add("bat");
+
+
+    bat.textContent =
+        "🦇";
+
+
+    bat.style.top =
+        (10 + Math.random() * 50)
+        + "vh";
+
+
+    bat.style.fontSize =
+        (15 + Math.random() * 20)
+        + "px";
+
+
+    bat.style.animationDuration =
+        (8 + Math.random() * 8)
+        + "s";
+
+
+    document
+        .getElementById("bats")
+        .appendChild(bat);
+
+
+    setTimeout(
+        () => bat.remove(),
+        17000
+    );
+
+}
+
+
+setInterval(
+    createBat,
+    3500
+);
+
+
+
+/* =========================================
+   CELEBRACIÓN
+========================================= */
+
+function createCelebration() {
+
+
+    const symbols = [
+
+        "❤️",
+        "🖤",
+        "🎃",
+        "🦇",
+        "✨",
+        "🕸️",
+        "💕"
+
+    ];
+
+
+    for(
+        let i = 0;
+        i < 90;
+        i++
+    ) {
+
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.classList.add(
+            "confetti"
+        );
+
+
+        piece.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random() * 100
+            + "vw";
+
+
+        piece.style.fontSize =
+            (14 +
+            Math.random() * 24)
+            + "px";
+
+
+        piece.style.animationDuration =
+            (2 +
+            Math.random() * 4)
+            + "s";
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.5
+            + "s";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(
+            () => piece.remove(),
+            7000
+        );
+
+    }
+
+}
+
+
+</script>
+
+</body>
+</html>
