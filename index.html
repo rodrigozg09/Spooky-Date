@@ -759,7 +759,70 @@ button {
     }
 
 }
+/* =========================================
+   BOTÓN CONTINUAR
+========================================= */
 
+.continue-btn {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 32px;
+
+    border: 1px solid #c66a45;
+
+    border-radius: 999px;
+
+    color: #eee6d4;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(141,31,45,.8),
+            rgba(80,20,30,.8)
+        );
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(160,35,40,.2);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+
+.continue-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a52b39,
+            #c43b32
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(210,50,40,.45);
+}
 </style>
 </head>
 
@@ -830,7 +893,7 @@ button {
 
 
     <div class="date">
-        03 · OCTUBRE · 2026
+        02 · OCTUBRE · 2026
     </div>
 
 
@@ -911,7 +974,7 @@ button {
         <br>
 
         <span style="color:#c66a45;">
-            03 de octubre de 2026
+            02 de octubre de 2026
         </span>
 
         <br><br>
@@ -922,23 +985,12 @@ button {
     </p>
 
 
-    <!--
-        AQUÍ PODEMOS PONER DESPUÉS
-        LA PISTA DEL SIGUIENTE COFRE
-    -->
-
-    <div
-        class="clue"
-        id="clue"
-    >
-
-        🔐 PISTA DESBLOQUEADA
-
-        <br><br>
-
-        [ AQUÍ IRÁ LA SIGUIENTE PISTA ]
-
-    </div>
+ <a
+    href="misterios.html"
+    class="continue-btn"
+>
+    DESCUBRIR LOS MISTERIOS →
+</a>
 
 
 </main>
@@ -1195,18 +1247,6 @@ yesButton.addEventListener(
         createCelebration();
 
 
-        /* Revelar pista */
-
-        setTimeout(
-            function() {
-
-                document.getElementById(
-                    "clue"
-                ).style.display = "block";
-
-            },
-            1800
-        );
 
     }
 );
